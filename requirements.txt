@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+groq
+python-dotenv
+pydantic
+pydantic-settings
+email-validator
+python-multipart
+passlib[bcrypt]
+python-jose[cryptography]
+faiss-cpu
+chromadb
+numpy<2.0.0
+pytest
+httpx
