@@ -22,7 +22,7 @@ export default function MeetingCard({
   created_at,
 }: MeetingCardProps) {
   return (
-    <Link href={`/meetings/${id}`}>
+    <Link href={`/meeting?id=${id}`}>
       <Card className="hover:border-zinc-600 hover:shadow-xl transition-all duration-300 cursor-pointer group">
         <CardHeader>
           <CardTitle className="group-hover:text-white transition-colors truncate">
