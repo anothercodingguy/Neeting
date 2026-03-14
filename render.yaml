@@ -1,8 +1,10 @@
 services:
+  # Backend - FastAPI
   - type: web
-    name: meeting-ai-api
+    name: neeting-api
     env: python
     plan: free
+    rootDir: ./
     buildCommand: "pip install -r requirements.txt"
     startCommand: "uvicorn app.main:app --host 0.0.0.0 --port 10000"
     envVars:
@@ -14,3 +16,17 @@ services:
         generateValue: true
       - key: ENVIRONMENT
         value: production
+
+  # Frontend - Next.js
+  - type: web
+    name: neeting-frontend
+    env: node
+    plan: free
+    rootDir: ./frontend
+    buildCommand: "npm install && npm run build"
+    startCommand: "node .next/standalone/server.js"
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        sync: false
+      - key: PORT
+        value: "10000"
